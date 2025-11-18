@@ -1,0 +1,13 @@
+#main
+{
+ height:auto;
+ width:600px;
+}
+
+.main_part
+{
+    /* background-color: aqua; */
+ height:150px;
+ width:200px;
+ float:left;  
+}

@@ -1,0 +1,12 @@
+#nav
+{
+ height:7%;
+ background-color:brown;    
+}
+
+#nav a
+{
+ color:white;
+ font-size:20px;
+ margin:0 20px 0 20px;    
+}
