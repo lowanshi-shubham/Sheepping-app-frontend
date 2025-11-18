@@ -132,16 +132,25 @@
         height: 100%;
         object-fit: cover;
     }
-    #login{
+   
+}
+@media (max-width: 991px){
+ #login{
                     display: inline-flex !important;
         background-color: transparent;
         border-color: transparent;
-        padding-left: 0px;
+        padding-left: 0px !important;
         padding-top: 10px !important;
+        box-shadow: none;
     
 
     }
+
+    .L-arrow{
+        display: none;
+    }
 }
+
 
 .page-header {
     background-position: center center;
