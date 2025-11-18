@@ -132,6 +132,15 @@
         height: 100%;
         object-fit: cover;
     }
+    #login{
+                    display: inline-flex !important;
+        background-color: transparent;
+        border-color: transparent;
+        padding-left: 0px;
+        padding-top: 10px !important;
+    
+
+    }
 }
 
 .page-header {

@@ -70,7 +70,7 @@ function Header() {
             <>
               <Link className="nav-item nav-link active" to="/">Home</Link>
               <Link className="nav-item nav-link" to="/about">About</Link>
-              {/* <Link className="nav-item nav-link" to="/demo">Demo</Link> */}
+              {/* <Link className="nav-item nav-link" to="/demo">Demo</Link>   */}
               <Link className="nav-item nav-link" to="/service">Services</Link>
               <Link className="nav-item nav-link" to="/contact">Contact</Link>
               
@@ -89,7 +89,7 @@ function Header() {
           );
         } else {
           return (
-            <Link className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block " to="/login">
+            <Link className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block" id="login" to="/login">
               Login <i className="fa fa-arrow-right ms-3"></i>
             </Link>
           );
@@ -101,7 +101,7 @@ function Header() {
           <div className="row gx-0">
             <div className="col-lg-3 bg-dark d-none d-lg-block">
               <Link to="#" className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                <h2 className="m-0 text-primary text-uppercase">Shipping War</h2>
+                <h2 className="m-0 text-primary text-uppercase">Shipping W</h2>
               </Link>
             </div>
             <div className="col-lg-9">
@@ -119,8 +119,8 @@ function Header() {
                 <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                   <div className="navbar-nav mr-auto py-0">
                     {getNavItems()}
-                  </div>
                   {getLogoutOrLoginButton()}
+                  </div>
                 </div>
               </nav>
             </div>
