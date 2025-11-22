@@ -1,9 +1,9 @@
-export const    __userapiurl="https://sheepping-app.onrender.com/user/";
+export const    __userapiurl="https://sheepping-backend.onrender.com/user/";
 
-export const __categoryapiurl="https://sheepping-app.onrender.com/category/";
+export const __categoryapiurl="https://sheepping-backend.onrender.com/category/";
 
-export const __subcategoryapiurl="https://sheepping-app.onrender.com/subcategory/";
+export const __subcategoryapiurl="https://sheepping-backend.onrender.com/subcategory/";
 
-export const __shipmentapiurl="https://sheepping-app.onrender.com/shipment/"
+export const __shipmentapiurl="https://sheepping-backend.onrender.com/shipment/"
 
-export const __bidapiurl="https://sheepping-app.onrender.com/bid/"
+export const __bidapiurl="https://sheepping-backend.onrender.com/bid/"
