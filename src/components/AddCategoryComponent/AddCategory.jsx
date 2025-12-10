@@ -21,10 +21,33 @@ function AddCategory() {
       const config = {
           'content-type': 'multipart/form-data'
       };
-      axios.post(__categoryapiurl+"save", formData, config).then((response) => {
-        setCatName("");
-        setOutput("Category Added Successfully....");
-      });
+
+    axios.post(
+  __categoryapiurl + "save",
+  formData,
+  {
+    headers: {
+      "Content-Type": "multipart/form-data"
+    },
+    withCredentials: true
+  }
+)
+.then((response) => {
+  setCatName("");
+  setOutput("✅ Category Added Successfully....");
+})
+.catch((error) => {
+  console.error("❌ Axios Error:", error);
+  setOutput("❌ Category Add Failed");
+});
+
+
+
+        
+      // axios.post(__categoryapiurl+"save", formData, config).then((response) => {
+      //   setCatName("");
+      //   setOutput("Category Added Successfully....");
+      // });
     };
 
   return (
