@@ -14,7 +14,7 @@ function Bidproduct() {
     const [ scList , setSubCatList ] = useState([]);    
 
 
-    console.log(scList[0].catnm);
+    // console.log(scList[0].catnm);
 
   const fetchData = () => {
       axios.get(__subcategoryapiurl+"fetch",{
