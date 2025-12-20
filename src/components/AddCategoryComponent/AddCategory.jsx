@@ -18,8 +18,10 @@ function AddCategory() {
       var formData = new FormData();
       formData.append('catnm', catName);
       formData.append('caticon', file);
-     console.log( formData.get('catnm'));
-     console.log( formData.get('caticon'));
+   for (let pair of formData.entries()) {
+  console.log(pair[0], pair[1]);
+}
+
 
     axios.post(
   __categoryapiurl + "save",
