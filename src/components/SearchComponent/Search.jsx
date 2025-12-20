@@ -11,6 +11,7 @@ function Search() {
   useEffect(()=>{
     axios.get(__categoryapiurl+"fetch").then((response)=>{
         setCatList(response.data);
+        console.log(response.data);
     }).catch((error)=>{
         console.log(error);        
         });  
@@ -32,7 +33,7 @@ function Search() {
  cList.map((row)=>(
     <div class="main_part" >
         <Link to={`/searchsc/${row.catnm}`} >
-        <img src={`public/assets/uploads/categoryicons/${row.caticonnm}`} height={120} width={150}/>
+        <img src={`${row.caticonnm}`} height={120} width={150}/>
         <br/>
         <b>{row.catnm}</b>    
         </Link>
