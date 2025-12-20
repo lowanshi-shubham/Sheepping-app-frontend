@@ -32,7 +32,7 @@ function AddSubCategory() {
       const config = {
           'content-type': 'multipart/form-data'
       };
-      axios.post(__subcategoryapiurl+"save", formData, config).then((response) => {
+      axios.post(__subcategoryapiurl+"save", formData).then((response) => {
         setCatName("");
         setSubCatName("");
         setOutput("SubCategory Added Successfully....");
