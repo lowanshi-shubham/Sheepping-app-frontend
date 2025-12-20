@@ -69,10 +69,11 @@ function Addproduct() {
         setTitle("");
         setCategorynm("");
         setSubCategorynm("");
-        // setDescription("");
-        document.getElementById("Description").value="";
+        setDescription(null);
+        setFile(null);
+        // document.getElementById("Description").value="";
         setBaseprice("");
-        document.getElementById("myfile").value = "";
+        // document.getElementById("myfile").value = "";
       })
       .catch((error) => {
         console.log(error);
