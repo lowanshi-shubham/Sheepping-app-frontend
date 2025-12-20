@@ -35,6 +35,7 @@ function AddSubCategory() {
       axios.post(__subcategoryapiurl+"save", formData).then((response) => {
         setCatName("");
         setSubCatName("");
+        setFile(null);
         setOutput("SubCategory Added Successfully....");
       });
     };    
