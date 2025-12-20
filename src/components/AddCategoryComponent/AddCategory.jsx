@@ -18,17 +18,13 @@ function AddCategory() {
       var formData = new FormData();
       formData.append('catnm', catName);
       formData.append('caticon', file);
-      const config = {
-          'content-type': 'multipart/form-data'
-      };
+     console.log(formData);
 
     axios.post(
   __categoryapiurl + "save",
   formData,
   {
-    headers: {
-      "Content-Type": "multipart/form-data"
-    },
+   
     withCredentials: true
   }
 )
