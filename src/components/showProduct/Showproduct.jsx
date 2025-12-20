@@ -75,7 +75,7 @@ function Show() {
                     <tr key={index}>
                       <td>
                         <img
-                          src={`/assets/uploads/shipmenticons/${row.piconnm}`}
+                          src={`${row.piconnm}`}
                           alt="product"
                           height={250}
                           width={300}
@@ -87,7 +87,7 @@ function Show() {
                         <b>Description:</b>{" "}
                         <span
                           style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}
-                          onClick={() => window.open(`/assets/uploads/shipmentDescription/${row.description}`, '_blank')}
+                          onClick={() => window.open(`${row.description}`, '_blank')}
                           rel="noopener noreferrer"
                         >
                           View Description
