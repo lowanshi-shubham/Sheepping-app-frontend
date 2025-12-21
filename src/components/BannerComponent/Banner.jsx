@@ -40,9 +40,12 @@ function Banner() {
                     <div class="p-3" style={{"max-width":"700px"}}>
                         <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Search For Best Deals</h6>
                         <h1 class="display-3 text-white mb-4 animated slideInDown">Discover For Consignments </h1>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Services</a>
+                   <Link to="/service">
+                        <a class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Services</a>
+                        </Link>
+                        <Link to="/login">
                         <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Consignment</a>
-                    </div>
+                        </Link> </div>
                 </div>
             </div>
         </div>

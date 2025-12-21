@@ -7,7 +7,7 @@ import Validate from "../ValidationComponent/login.validation";
 function Register() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
-  // const [ password , setPassword ] = useState();
+  const [ password , setPassword ] = useState();
   const [mobile, setMobile] = useState();
   const [address, setAddress] = useState();
   const [city, setCity] = useState();
@@ -19,7 +19,7 @@ function Register() {
     const userDetails = {
       name: name,
       email: email,
-      // password: password,
+      password: password,
       mobile: mobile,
       address: address,
       city: city,
@@ -40,7 +40,7 @@ const validationErrors=Validate(userDetails)
       .then(() => {
         setName("");
         setEmail("");
-        // setPassword("");
+        setPassword("");
         setMobile("");
         setCity("");
         setAddress("");
@@ -92,10 +92,10 @@ const validationErrors=Validate(userDetails)
 
                 </div>
                 <br />
-                {/* <div class="form-group">
+                <div class="form-group">
     <label for="pwd">Password:</label>
     <input type="password" class="form-control" value={password} onChange={(e)=>{ setPassword(e.target.value)}} />
-  </div> */}
+  </div>
                 <br />
                 <div class="form-group">
                   <label for="mobile">Mobile:</label>
