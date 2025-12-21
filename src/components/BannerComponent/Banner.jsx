@@ -20,7 +20,7 @@ function Banner() {
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="public/assets/img/d.jpg" width="1366" height="500" alt="Image" />
+                <img class="w-100" src="https://res.cloudinary.com/daozbih20/image/upload/v1766318002/d_tpbx6u.jpg" width="1366" height="500" alt="Image" />
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style={{"max-width" : "700px"}} >
                         <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Search For Best Deals</h6>
@@ -35,7 +35,7 @@ function Banner() {
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="w-100" src="public/assets/img/p.jpg" width="1366" height="500" alt="Image" />
+                <img class="w-100" src="https://res.cloudinary.com/daozbih20/image/upload/v1766318002/p_uuwtic.jpg" width="1366" height="500" alt="Image" />
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style={{"max-width":"700px"}}>
                         <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Search For Best Deals</h6>

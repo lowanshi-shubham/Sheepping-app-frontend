@@ -1,9 +1,9 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Auth from "../AuthComponent/Auth";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const [HeaderContent, setHeaderContent] = useState();
@@ -30,29 +30,33 @@ function Header() {
       );
 
       const commonNavBrand = (
-        <Link to="#" className="navbar-brand d-block d-lg-none">
+        <NavLink to="#" className="navbar-brand d-block d-lg-none">
           <h1 className="m-0 text-primary text-uppercase">Shipping War</h1>
-        </Link>
+        </NavLink>
       );
 
       const getNavItems = () => {
         if (role === "admin") {
           return (
             <>
-              <Link className="nav-item nav-link active" to="/admin">Admin Home</Link>
-              <Link className="nav-item nav-link" to="/manageusers">Manage Users</Link>
+              <NavLink className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    } to="/admin">Admin Home</NavLink>
+              <NavLink className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    } to="/manageusers">Manage Users</NavLink>
               <div className="nav-item dropdown">
-                <Link className="nav-link dropdown-toggle" to="#" data-bs-toggle="dropdown" style={{ color: "#FDA117" }}>Manage Category</Link>
+                <NavLink className="nav-link dropdown-toggle" to="#" data-bs-toggle="dropdown" style={{ color: "#FDA117" }}>Manage Category</NavLink>
                 <div className="dropdown-menu rounded-0 m-0">
-                  <Link className="dropdown-item" to="/addcategory">Add Category</Link>
-                  <Link className="dropdown-item" to="/addsubcategory">Add SubCategory</Link>
+                  <NavLink className="dropdown-item" to="/addcategory">Add Category</NavLink>
+                  <NavLink className="dropdown-item" to="/addsubcategory">Add SubCategory</NavLink>
                 </div>
               </div>
               <div className="nav-item dropdown">
-                <Link className="nav-link dropdown-toggle" to="#" data-bs-toggle="dropdown" style={{ color: "#FDA117" }}>Settings</Link>
+                <NavLink className="nav-link dropdown-toggle" to="#" data-bs-toggle="dropdown" style={{ color: "#FDA117" }}>Settings</NavLink>
                 <div className="dropdown-menu rounded-0 m-0">
-                  <Link className="dropdown-item" to="/epadmin">Edit Profile</Link>
-                  <Link className="dropdown-item" to="/cpadmin">Change Password</Link>
+                  <NavLink className="dropdown-item" to="/epadmin">Edit Profile</NavLink>
+                  <NavLink className="dropdown-item" to="/cpadmin">Change Password</NavLink>
                 </div>
               </div>
             </>
@@ -60,22 +64,67 @@ function Header() {
         } else if (role === "user") {
           return (
             <>
-              <Link className="nav-item nav-link active" to="/user">User Home</Link>
-              <Link className="nav-item nav-link" to="/addproduct">Add Shipping Product</Link>
-              <Link className="nav-item nav-link" to="/search">Search</Link>
+              <NavLink className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    } to="/user">User Home</NavLink>
+              <NavLink className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    } to="/addproduct">Add Shipping Product</NavLink>
+              <NavLink className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    } to="/search">Search</NavLink>
             </>
           );
         } else { 
           return (
-            <>
-              <Link className="nav-item nav-link active" to="/">Home</Link>
-              <Link className="nav-item nav-link" to="/about">About</Link>
-              {/* <Link className="nav-item nav-link" to="/demo">Demo</Link> */}
-              <Link className="nav-item nav-link" to="/service">Services</Link>
-              <Link className="nav-item nav-link" to="/contact">Contact</Link>
-              
-              <Link className="nav-item nav-link" for="/register" to="/register">Register</Link>
-            </>
+
+<>
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    }
+  >
+    Home
+  </NavLink>
+
+  <NavLink
+    to="/about"
+    className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    }
+  >
+    About
+  </NavLink>
+
+  <NavLink
+    to="/service"
+    className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    }
+  >
+    Services
+  </NavLink>
+
+  <NavLink
+    to="/contact"
+    className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    }
+  >
+    Contact
+  </NavLink>
+
+  <NavLink
+    to="/register"
+    className={({ isActive }) =>
+      `nav-item nav-link ${isActive ? "active" : ""}`
+    }
+  >
+    Register
+  </NavLink>
+</>
+
           );
         }
       };
@@ -83,15 +132,15 @@ function Header() {
       const getLogoutOrLoginButton = () => {
         if (token) {
           return (
-            <Link className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block" id="login" to="/logout">
+            <NavLink className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block" id="login" to="/logout">
               Logout <i className="fa fa-arrow-right ms-3 L-arrow"></i>
-            </Link>
+            </NavLink>
           );
         } else {
           return (
-            <Link className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block " id="login" to="/login">
+            <NavLink className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block " id="login" to="/login">
               Login <i className="fa fa-arrow-right ms-3  L-arrow"></i>
-            </Link>
+            </NavLink>
           );
         }
       };
@@ -100,9 +149,9 @@ function Header() {
         <div className="container-fluid bg-dark px-0">
           <div className="row gx-0">
             <div className="col-lg-3 bg-dark d-none d-lg-block">
-              <Link to="#" className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+              <NavLink to="#" className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
                 <h2 className="m-0 text-primary text-uppercase">Shipping War</h2>
-              </Link>
+              </NavLink>
             </div>
             <div className="col-lg-9">
               {token ? sharedTopBar : null}
