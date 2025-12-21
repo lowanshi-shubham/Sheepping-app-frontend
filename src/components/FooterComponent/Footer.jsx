@@ -31,7 +31,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-            <img class="w-100" src="public/assets/img/footer-img.png" width=" " height="200px " alt="Image" />
+            <img class="w-100" src="https://res.cloudinary.com/daozbih20/image/upload/v1766315543/footer-img_iq7qzy.png" width=" " height="200px " alt="Image" />
 
     </div>
 </div>
@@ -156,7 +156,7 @@ A shipment refers to the process of transporting goods from one location to anot
             </div>
         </div>
     </div>
-    <img class="w-100" src="public/assets/img/footer-img.png" width=" " height="200px " alt="Image" />
+    <img class="w-100" src="https://res.cloudinary.com/daozbih20/image/upload/v1766315543/footer-img_iq7qzy.png" width=" " height="200px " alt="Image" />
 </div>
 {/* Footer End */}
         
