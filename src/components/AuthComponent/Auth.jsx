@@ -7,6 +7,10 @@ function Auth()
 
     useEffect(()=>{
      var path=window.location.pathname;
+          if( !(path=="/" || path=="/register" || path=="/contact" || path=="/service" || path=="/about" || path=="/login"))
+{
+
+
      if(path=="/admin" || path=="/manageusers" || path=="/epadmin" || path=="/cpadmin" || path=="/addcategory" || path=="/addsubcategory")
      {
       if(!localStorage.getItem("token") || localStorage.getItem("role")!="admin")   
@@ -22,10 +26,11 @@ function Auth()
         if(localStorage.getItem("role")=="admin")            
             navigate("/admin");
         else if(localStorage.getItem("role")=="user")
-            navigate("/user");
-        else
-            navigate(path);    
+            navigate("/user");   
      }
+    }
+     else
+            navigate("login"); 
     },[]);
     
     return(
