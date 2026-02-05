@@ -12,12 +12,11 @@ function Manageusers() {
     axios.get(__userapiurl+"fetch",{
         params :  {"role":"user"} 
     }).then((response)=>{
-        //console.log(response.data);
         setUserDetails(response.data);
     }).catch((error)=>{
         console.log(error);        
     });  
-  });    
+  },[]);    
 
   const manageuserstatus=(_id,s)=>{
     if(s=="active")
