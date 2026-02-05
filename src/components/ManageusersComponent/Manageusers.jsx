@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 function Manageusers() {
 
   const [ users , setUserDetails ] = useState([]);  
+  const navigate=Navigate()
 
   useEffect(()=>{
     axios.get(__userapiurl+"fetch",{
