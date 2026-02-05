@@ -30,7 +30,7 @@ const validationErrors=Validate(userDetails)
 
      if (Object.keys(validationErrors).length > 0) {
     setError(validationErrors);
-    // return;
+    return;
   } else {
     setError({});
   }
