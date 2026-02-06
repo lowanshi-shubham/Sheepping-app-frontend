@@ -25,15 +25,15 @@ function Register() {
       city: city,
       gender: gender,
     };
+    const validationErrors=Validate(userDetails)
+    
+    if (Object.keys(validationErrors).length > 0) {
+      setError(validationErrors);
+      return;
+    } else {
+      setError({});
+    }
     console.log("registration___");
-const validationErrors=Validate(userDetails)
-
-     if (Object.keys(validationErrors).length > 0) {
-    setError(validationErrors);
-    return;
-  } else {
-    setError({});
-  }
 
     axios
       .post(__userapiurl + "save", userDetails)
