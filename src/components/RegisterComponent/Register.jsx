@@ -25,7 +25,7 @@ function Register() {
       city: city,
       gender: gender,
     };
-    //console.log(userDetails);
+    console.log("registration___");
 const validationErrors=Validate(userDetails)
 
      if (Object.keys(validationErrors).length > 0) {
