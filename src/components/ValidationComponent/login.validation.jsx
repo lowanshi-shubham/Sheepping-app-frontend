@@ -2,53 +2,67 @@
 export default function Validate(userDetails) {
   const errors = {};
 
-  if(!userDetails.name){
-  errors.name="name is required"
-}else if(userDetails.name.length<2){
-  errors.name="name length must be 2"
-}else if(userDetails.name.length>50){
-  errors.name="name length maximum 50"
-}
+  // Name
+  if (!userDetails.name) {
+    errors.name = "Name is required";
+  } else if (userDetails.name.length < 2) {
+    errors.name = "Name must be at least 2 characters";
+  } else if (userDetails.name.length > 50) {
+    errors.name = "Name must be maximum 50 characters";
+  }
 
+  // Email
   if (!userDetails.email) {
     errors.email = "Email is required";
   } else if (!/\S+@\S+\.\S+/.test(userDetails.email)) {
     errors.email = "Invalid email format";
   }
 
+  // Password
   if (!userDetails.password) {
     errors.password = "Password is required";
-  } else if (userDetails.password.length < 5) {
+  } else if (userDetails.password.length < 6) {
     errors.password = "Password must be at least 6 characters";
   }
 
-   if (!userDetails.userCaptchaInput) {
-    errors.userCaptchaInput = "Capture is required";
-  }else if(userDetails.userCaptchaInput!=userDetails.captcha){
-    errors.userCaptchaInput="Capture is wrong"
+  // Mobile
+  if (!userDetails.mobile) {
+    errors.mobile = "Mobile number is required";
+  } else if (!/^[6-9]\d{9}$/.test(userDetails.mobile)) {
+    errors.mobile = "Mobile number must be 10 digits and start with 6-9";
   }
 
-  if (!userDetails.mobile) {
-  errors.mobile = "Mobile No. is required";
-} else if (!/^[6-9]\d{9}$/.test(userDetails.mobile)) {
-  errors.mobile = "Mobile number must be 10 digits and start with 6-9";
-}
+  // Address (optional but length check)
+  if (userDetails.address) {
+    if (
+      userDetails.address.length < 5 ||
+      userDetails.address.length > 150
+    ) {
+      errors.address =
+        "Address must be between 5 and 150 characters";
+    }
+  }
 
+  // City
+  if (!userDetails.city) {
+    errors.city = "City is required";
+  }
 
-// if(!userDetails.address){
-//   errors.address="address is required"
-// }else if(userDetails.address.length>5 || userDetails.address.length<150){
-//   errors.address="address must be 5 and maximum 150 character"
-// }
+  // Gender
+  if (!userDetails.gender) {
+    errors.gender = "Gender is required";
+  }
 
-if(!userDetails.city)
-{
-  errors.city="city is reuired "
-}
+  // Captcha (ONLY if you are actually sending it)
+  if (userDetails.userCaptchaInput !== undefined) {
+    if (!userDetails.userCaptchaInput) {
+      errors.userCaptchaInput = "Captcha is required";
+    } else if (
+      userDetails.userCaptchaInput !== userDetails.captcha
+    ) {
+      errors.userCaptchaInput = "Captcha is incorrect";
+    }
+  }
 
-if(!userDetails.gender){
-  errors.gender="gender is reuired"
-}
   return errors;
 }
-
