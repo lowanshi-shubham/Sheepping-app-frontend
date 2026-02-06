@@ -7,13 +7,13 @@ import Validate from "../ValidationComponent/login.validation";
 function Register() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
-  const [ password , setPassword ] = useState();
+  const [password, setPassword] = useState();
   const [mobile, setMobile] = useState();
   const [address, setAddress] = useState();
   const [city, setCity] = useState();
   const [gender, setGender] = useState();
   const [output, setOutput] = useState();
-  const[error,setError]=useState({})
+  const [error, setError] = useState({});
 
   const handleSubmit = () => {
     const userDetails = {
@@ -25,8 +25,8 @@ function Register() {
       city: city,
       gender: gender,
     };
-    const validationErrors=Validate(userDetails)
-    
+    const validationErrors = Validate(userDetails);
+
     if (Object.keys(validationErrors).length > 0) {
       setError(validationErrors);
       return;
@@ -74,8 +74,9 @@ function Register() {
                       setName(e.target.value);
                     }}
                   />
-                          {error.name && <span style={{ color: "red" }}>{error.name}</span>}
-
+                  {error.name && (
+                    <span style={{ color: "red" }}>{error.name}</span>
+                  )}
                 </div>
                 <br />
                 <div class="form-group">
@@ -88,16 +89,25 @@ function Register() {
                       setEmail(e.target.value);
                     }}
                   />
-                          {error.email && <span style={{ color: "red" }}>{error.email}</span>}
-
+                  {error.email && (
+                    <span style={{ color: "red" }}>{error.email}</span>
+                  )}
                 </div>
                 <br />
                 <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" value={password} onChange={(e)=>{ setPassword(e.target.value)}} />
-                              {error.password && <span style={{ color: "red" }}>{error.password}</span>}
-
-  </div>
+                  <label for="pwd">Password:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                  />
+                  {error.password && (
+                    <span style={{ color: "red" }}>{error.password}</span>
+                  )}
+                </div>
                 <br />
                 <div class="form-group">
                   <label for="mobile">Mobile:</label>
@@ -109,8 +119,9 @@ function Register() {
                       setMobile(e.target.value);
                     }}
                   />
-                          {error.mobile && <span style={{ color: "red" }}>{error.mobile}</span>}
-
+                  {error.mobile && (
+                    <span style={{ color: "red" }}>{error.mobile}</span>
+                  )}
                 </div>
                 <br />
                 <div class="form-group">
@@ -123,8 +134,9 @@ function Register() {
                       setAddress(e.target.value);
                     }}
                   ></textarea>
-                          {error.address && <span style={{ color: "red" }}>{error.address}</span>}
-
+                  {error.address && (
+                    <span style={{ color: "red" }}>{error.address}</span>
+                  )}
                 </div>
                 <br />
                 <div class="form-group">
@@ -148,8 +160,9 @@ function Register() {
                       <option>Nasik</option>
                     </optgroup>
                   </select>
-                          {error.city && <span style={{ color: "red" }}>{error.city}</span>}
-
+                  {error.city && (
+                    <span style={{ color: "red" }}>{error.city}</span>
+                  )}
                 </div>
                 <br />
                 <div class="form-group">
@@ -172,10 +185,11 @@ function Register() {
                       setGender(e.target.value);
                     }}
                   />
-
                 </div>
-      {error.gender && <span style={{ color: "red" }}>{error.gender}</span>}
-                <br /> <br/>
+                {error.gender && (
+                  <span style={{ color: "red" }}>{error.gender}</span>
+                )}
+                <br /> <br />
                 <button
                   type="button"
                   class="btn btn-warning"
