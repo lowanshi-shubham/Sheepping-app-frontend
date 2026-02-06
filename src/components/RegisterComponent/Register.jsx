@@ -95,6 +95,8 @@ function Register() {
                 <div class="form-group">
     <label for="pwd">Password:</label>
     <input type="password" class="form-control" value={password} onChange={(e)=>{ setPassword(e.target.value)}} />
+                              {error.password && <span style={{ color: "red" }}>{error.password}</span>}
+
   </div>
                 <br />
                 <div class="form-group">
